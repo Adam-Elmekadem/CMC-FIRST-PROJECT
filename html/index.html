@@ -440,6 +440,64 @@
         .min-vh-75 {
             min-height: 75vh;
         }
+
+        /* Fix for services section size consistency */
+#services-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-services-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accordion {
+    min-height: 400px; /* Ensures minimum height even when collapsed */
+}
+
+.accordion-item {
+    border: 1px solid #dee2e6 !important;
+}
+
+.accordion-button {
+    min-height: 60px; /* Consistent button height */
+    display: flex;
+    align-items: center;
+}
+
+.accordion-body {
+    min-height: 150px; /* Minimum height for content when expanded */
+}
+
+/* Ensure consistent spacing */
+.modern-services-section .container-fluid {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 991.98px) {
+    .accordion {
+        min-height: 300px;
+    }
+    
+    .accordion-body {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .accordion {
+        min-height: 250px;
+    }
+    
+    .accordion-body {
+        min-height: 100px;
+    }
+}
     </style>
 </head>
 <body>
@@ -658,14 +716,17 @@
                                 <div class="accordion-item border-top border-bottom">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button collapsed fw-bold fs-4 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                            <span class="me-3">•</span> WEB DESIGN
+                                            <span class="me-3">•</span> WEB DEVELOPMENT
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#specialtiesAccordion">
-                                        <div class="accordion-body row py-4">
-                                            <div class="col-lg-8">
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                        <div class="accordion-body row py-4 align-items-center">
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <p>I specialize in creating modern, responsive websites using cutting-edge technologies like HTML5, CSS3, JavaScript, and frameworks such as Bootstrap and React.</p>
+                                                <p>From e-commerce platforms to custom web applications, I deliver clean, scalable code with seamless user experiences. Every project is optimized for performance, SEO, and cross-browser compatibility to ensure your digital presence stands out.</p>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="../images/web.jpg" class="img-fluid rounded shadow-sm" alt="Web Development Example">
                                             </div>
                                         </div>
                                     </div>
@@ -678,10 +739,13 @@
                                         </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#specialtiesAccordion">
-                                        <div class="accordion-body row py-4">
-                                            <div class="col-lg-8">
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                        <div class="accordion-body row py-4 align-items-center">
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <p>I create intuitive and visually appealing user interfaces that prioritize user experience and brand consistency. Using design tools like Figma and Adobe Creative Suite, I craft wireframes, prototypes, and high-fidelity designs.</p>
+                                                <p>My design process focuses on user research, accessibility standards, and conversion optimization to ensure your users have an engaging and memorable interaction with your digital products.</p>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="../images/design1.jpg" class="img-fluid rounded shadow-sm" alt="UI/UX Design Example">
                                             </div>
                                         </div>
                                     </div>
@@ -690,17 +754,17 @@
                                 <div class="accordion-item border-bottom">
                                     <h2 class="accordion-header" id="headingThree">
                                         <button class="accordion-button fw-bold fs-4 py-4 custom-gradient-text" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                            <span class="me-3" style="color: #ff8c00;">•</span> MOBILE APPLICATION
+                                            <span class="me-3" style="color: #ff8c00;">•</span> BRANDING DESIGN
                                         </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#specialtiesAccordion">
                                         <div class="accordion-body row py-4 align-items-center">
                                             <div class="col-lg-6 mb-3 mb-lg-0">
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                                <p>I create compelling brand identities that tell your story and connect with your audience. From logo design to complete brand guidelines, I develop cohesive visual systems that reflect your company's values and mission.</p>
+                                                <p>My branding process includes market research, competitor analysis, and strategic positioning to ensure your brand stands out in the marketplace. I deliver comprehensive brand packages including logos, color palettes, typography, and brand application guidelines.</p>
                                             </div>
                                             <div class="col-lg-6 text-center">
-                                                <img src="../images/toa-heftiba-pcbSQTQr2-I-unsplash.jpg" class="img-fluid rounded shadow-sm" alt="Mobile Application Example">
+                                                <img src="../images/branding.jpg" class="img-fluid rounded shadow-sm" alt="Branding Design Example">
                                             </div>
                                         </div>
                                     </div>
@@ -709,14 +773,17 @@
                                 <div class="accordion-item border-bottom">
                                     <h2 class="accordion-header" id="headingFour">
                                         <button class="accordion-button collapsed fw-bold fs-4 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            <span class="me-3">•</span> USER RESEARCH
+                                            <span class="me-3">•</span> SEO OPTIMISATION
                                         </button>
                                     </h2>
                                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#specialtiesAccordion">
-                                        <div class="accordion-body row py-4">
-                                            <div class="col-lg-8">
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
-                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                        <div class="accordion-body row py-4 align-items-center">
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <p>I optimize websites to improve their visibility and ranking on search engines like Google. Through keyword research, on-page optimization, technical SEO audits, and content strategy, I help your website attract more organic traffic.</p>
+                                                <p>My SEO approach includes site speed optimization, mobile responsiveness, meta tag optimization, and link building strategies to ensure your website not only ranks higher but also provides excellent user experience and converts visitors into customers.</p>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="../images/SEO.jpg" class="img-fluid rounded shadow-sm" alt="SEO Optimisation Example">
                                             </div>
                                         </div>
                                     </div>
