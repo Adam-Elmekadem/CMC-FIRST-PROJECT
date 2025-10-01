@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Elmekadem - Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/section2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .main-content-container {
+            max-width: 1600px;
+            margin: 0 auto; 
+            height: 100%;
+        }
+
+        @media (max-width: 991.98px) {
+            .main-content-container {
+                flex-direction: column !important;
+                padding: 2rem 1rem !important;
+                min-height: auto !important;
+            }
+            
+            .hero-image {
+                order: -1 !important;
+                margin-bottom: 2rem;
+            }
+            
+            .profile-img {
+                max-width: 250px;
+                width: 100%;
+                height: auto;
+            }
+            
+            .main-content-container h1 {
+                font-size: 2rem !important;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            
+            .main-content-container h2 {
+                font-size: 1.1rem !important;
+                text-align: center;
+                width: 100% !important;
+                margin-bottom: 2rem;
+            }
+            
+            .talk {
+                margin: 10rem auto !important;
+                text-align: center;
+                display: block;
+                width: fit-content;
+            }
+            
+            .main-content-container .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 1rem !important;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .modern-welcome-section .row {
+                flex-direction: column;
+            }
+            
+            .modern-welcome-section .col-lg-4 {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+            
+            .modern-welcome-section .col-lg-8 {
+                order: 2;
+            }
+            
+            .row-cols-md-2 {
+                --bs-columns: 1;
+            }
+            
+            .modern-contact-item {
+                justify-content: center !important;
+                padding: 1rem;
+                background: #f8f9fa;
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .modern-stat-box {
+                margin-bottom: 1rem;
+            }
+            
+            .modern-experience-section .row {
+                flex-direction: column;
+            }
+            
+            .modern-experience-section .col-lg-5 {
+                text-align: center !important;
+                margin-bottom: 2rem;
+            }
+            
+            .modern-experience-section .col-lg-7 {
+                order: 2;
+            }
+            
+            .modern-timeline-item {
+                text-align: center !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        /* Slideshow Navigation Styles */
+        .main-sections {
+            height: 100vh;
+        }
+        
+        .main-sections > main {
+            height: 100vh;
+        }
+
+        @media (max-width: 991.98px) {
+            
+            
+            .modern-experience-section.px-5 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            main {
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .main-content-container h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .modern-welcome-title {
+                font-size: 2rem !important;
+            }
+            
+            .modern-profile-image {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            .profile-img {
+                max-width: 200px;
+            }
+            
+            .p-5 {
+                padding: 1rem !important;
+            }
+            
+            .px-5 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }   
+
+            main {
+                height: auto !important;
+            }
+        }
+
+        .custom-gradient-text {
+            background: linear-gradient(to right, #ff8c00, #ffa500, #ff1493); /* Exemple de dégradé orange/rose/violet */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .accordion-header h2 {
+            width: 100%;
+        }
+
+        .testimonial-gradient {
+                    /* Dégradé personnalisé (Orange vers Violet) */
+                    background: linear-gradient(135deg, #ff8c00 0%, #ff69b4 50%, #8a2be2 100%);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                }
+                
+                .testimonial-person-img {
+                    max-width: 90%; /* Pour qu'elle ne prenne pas toute la largeur */
+                    height: auto;
+                }
+
+                .fa-arrow-up-right-from-square {
+                    transform: rotate(-45deg); /* Fait pivoter légèrement l'icône pour ressembler à la flèche dans le design */
+                    display: inline-block;
+                }
+
+        /* Works Section Image Sizing */
+        @media (min-width: 992px) and (max-width: 1399px) {
+            #works .img-fluid {
+                max-width: 150px;
+                width: 150px;
+                height: auto;
+            }
+
+            main {
+                height: auto !important;
+            }
+            
+            /* Contact Form Sizing for Large Screens (lg) - Make form smaller */
+            #contact .col-md-8 .p-5 {
+                padding: 2rem !important; /* Smaller padding */
+                max-width: 600px; /* Limit form width */
+                margin: 0 auto; /* Center the form */
+            }
+            
+            #contact .form-control {
+                padding: 0.5rem 0.75rem !important; /* Smaller input padding */
+                font-size: 0.9rem !important; /* Smaller text */
+            }
+            
+            #contact .col-md-8 h2 {
+                font-size: 1.5rem !important; /* Smaller heading */
+                margin-bottom: 1rem !important;
+            }
+            
+            #contact .form-label {
+                font-size: 0.9rem !important; /* Smaller labels */
+            }
+            
+            #contact textarea.form-control {
+                min-height: 80px !important; /* Smaller textarea height */
+            }
+        }
+        
+        @media (min-width: 1400px) {
+            #works .img-fluid {
+                max-width: 200px;
+                width: 200px;
+                height: auto;
+            }
+
+            main {
+                height: auto !important;
+            }
+            
+            /* Contact Form Sizing for Extra Large Screens (xl) - Keep original size */
+            #contact .col-md-8 .p-5 {
+                padding: 3rem !important; /* Original padding */
+                max-width: none; /* No width restriction */
+            }
+            
+            #contact .form-control {
+                padding: 0.75rem 1rem !important; /* Original input padding */
+                font-size: 1rem !important; /* Original text size */
+            }
+            
+            #contact .col-md-8 h2 {
+                font-size: 2rem !important; /* Original heading size */
+                margin-bottom: 1.5rem !important;
+            }
+            
+            #contact .form-label {
+                font-size: 1rem !important; /* Original label size */
+            }
+            
+            #contact textarea.form-control {
+                min-height: 120px !important; /* Original textarea height */
+            }
+        }
+
+        /* Timeline Styles for Experience Section in About */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #ff6b35;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #ff6b35;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 17px;
+            left: 5px;
+            bottom: -15px;
+            width: 2px;
+            background-color: #e9ecef;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-date {
+            font-size: 0.9em;
+            color: #ff6b35;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            color: #333;
+            margin-top: 8px;
+        }
+
+        .timeline-company {
+            color: #6c757d;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 767.98px) {
+            .timeline-item {
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            .timeline-item::before,
+            .timeline-item::after {
+                display: none;
+            }
+        }
+
+        /* Experience Section Gradient Design */
+        .experience-gradient-section {
+            background: linear-gradient(135deg, #B86ADF 0%, #FF6C63 50%, #FFB147 100%);
+            min-height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-label {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+
+        .experience-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            max-width: 400px;
+        }
+
+        .experience-timeline {
+            padding-left: 2rem;
+        }
+
+        .experience-item {
+            position: relative;
+        }
+
+        .experience-years {
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .company-name {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .job-title {
+            font-size: 2rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991.98px) {
+            .experience-title {
+                font-size: 2.5rem;
+            }
+            
+            .job-title {
+                font-size: 1.5rem;
+            }
+            
+            .experience-timeline {
+                padding-left: 0;
+                margin-top: 2rem;
+            }
+            
+            .experience-item {
+                text-align: center;
+                margin-bottom: 3rem !important;
+            }
+            
+            .d-flex.justify-content-between {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .experience-title {
+                font-size: 2rem;
+            }
+            
+            .job-title {
+                font-size: 1.2rem;
+            }
+            
+            .experience-description {
+                text-align: center;
+                max-width: none;
+            }
+        }
+
+        /* Button hover effect */
+        .experience-gradient-section .btn-dark:hover {
+            background-color: #333 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .min-vh-75 {
+            min-height: 75vh;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <div class="warper d-flex">
+        <header id="sidebar">
+            <nav>
+                <div class="navContainer d-flex align-items-start flex-column p-5">
+                    <div class="logo mb-5 fs-2">
+                        <span class="">Shino.</span>
+                    </div>
+
+                    <div class="mt-5 nav-item mb-2 fs-4"><a href="#home" class="text-decoration-none text-light">HOME</a></div>
+                    <div class="nav-item mb-2 fs-4"><a href="#about" class="text-decoration-none text-light">ABOUT</a></div>
+                    <div class="nav-item mb-2 fs-4"><a href="#services" class="text-decoration-none text-light">SERVICES</a></div>
+                    <div class="nav-item mb-2 fs-4"><a href="#works" class="text-decoration-none text-light">WORKS</a></div>
+                    <div class="nav-item mb-2 fs-4"><a href="#blogs" class="text-decoration-none text-light">BLOGS</a></div>
+                    <div class="nav-item mb-2 fs-4"><a href="#contact" class="text-decoration-none text-light">CONTACT</a></div>
+
+                    <div class="socials-container d-flex gap-3">
+                        <a href="https://www.behance.net/adamoui/projects" class="social-link">
+                            <img src="../images/behance.png" alt="Behance logo" class="social-logo">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="../images/dribble-big-logo.png" alt="Dribbble logo" class="social-logo">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="../images/instagram.png" alt="Instagram logo" class="social-logo">
+                        </a>
+                    </div>
+                    <div class="copywrite fs-6 mt-4">
+                        Copyright &copy; 2024 Adam Elmekadem. All rights reserved
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <div class="main-sections">
+            <main>
+                <section class="p-5" id="home">
+                    <div class="main-content-container container-fluid d-flex flex-column flex-lg-row justify-content-center align-items-center p-0 h-100">
+                        
+                        <div class="col-12 col-lg-7 order-lg-1 px-3 px-lg-5 py-5 py-lg-0">
+                            <div>
+                                <h1>MY NAME IS <span class="name">ADAM ELMEKADEM...</span ></h1>
+
+                                <h2 class="fs-5 fst-italic w-100 w-lg-50 mb-4"><span>Graphic designer & web developper</span> based in Morocco</h2>
+                                
+                                <p class="talk bg-dark"><a href="#contact" class="text-white">let's talk with me</a></p>
+
+                                <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 gap-sm-5">
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="../images/telephone.png" class="icons" alt="phone logo">
+                                        <p>06 18 98 10 78</p>
+                                    </div>
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="../images/email.png" class="icons" alt="email logo">
+                                        <p><a class="text-dark" href="mailto:adamelmekadem61@gmail.com">adamelmekadem61@gmail.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-image col-12 col-lg-5 order-lg-2">
+                            <img src="../images/adam.jpg" alt="Adam Elmekadem" class="profile-img img-fluid">
+                        </div>
+                    </div>
+                </section>
+            </main>
+            
+            <main class="about-content">
+                <section class="modern-welcome-section container py-5" id="about">
+                    <div class="welcome-header mb-5">
+                        <p class="nice-to-meet">Nice to meet you!</p>
+                        <h1 class="modern-welcome-title">WELCOME TO...</h1>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-4 d-flex justify-content-center gap-3">
+                            <div class="modern-intro-left text-center w-100 p-4">
+                                <div class="modern-profile-container">
+                                    <img src="../images/adam.jpg" alt="Adam Elmekadem" class="modern-profile-image mb-3">
+                                    <h2 class="modern-name-title fs-4 fw-bold text-primary">ADAM ELMEKADEM</h2>
+                                    <p class="modern-job-title text-muted mb-4">Product Designer based in <strong>Morocco</strong></p>
+                                    <button class="modern-download-btn btn btn-dark">Download CV <i class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="d-flex flex-column gap-4">
+                                <div class="row row-cols-md-2 g-3">
+                                    <div class="col">
+                                        <div class="modern-contact-item d-flex align-items-center gap-2">
+                                            <i class="fas fa-phone contact-icon"></i>
+                                            <span>06 18 98 10 78</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="modern-contact-item d-flex align-items-center gap-2">
+                                            <i class="fas fa-calendar contact-icon"></i>
+                                            <span>23 yrs</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="modern-contact-item d-flex align-items-center gap-2">
+                                            <i class="fas fa-envelope contact-icon"></i>
+                                            <span>adamelmekadem61@gmail.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="modern-contact-item d-flex align-items-center gap-2">
+                                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                                            <span>Morocco, Rabat</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="modern-stat-box orange-stat py-4 rounded text-white h-100">
+                                            <div class="d-flex gap-3">
+                                                <span class="modern-stat-number d-block fs-1 fw-bold">10+</span>
+                                                <span class="modern-stat-label d-block fs-5 fw-medium mb-3 fst-italic">Years<br>Experience...</span>
+                                            </div>
+                                            <p class="modern-stat-description fs-6">
+                                                Hello there! My name is ADAM ELMEKADEM. I am a web designer & developer, and I'm very passionate and dedicated to my work.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="modern-stat-box p-4 rounded text-white h-100">
+                                            <div class="d-flex gap-3">
+                                                <span class="modern-stat-number d-block fs-1 fw-bold text-primary">14</span>
+                                                <span class="modern-stat-label d-block fs-5 fw-medium mb-3 fst-italic">Clients<br>Worldwide...</span>
+                                            </div>
+                                            <p class="modern-stat-description fs-6">
+                                                With 10+ years experience as a passionate & prolific designer, I have acquired the skills and knowledge necessary to make your project a success.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="modern-quote-box px-5 py-5 border-start border-5 border-dark fst-italic rounded-0 bg-dark">
+                                    <p class="mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-gradient-section py-5" id="experience">
+                    <div class="container-fluid px-4 px-lg-5">
+                        <div class="row align-items-center min-vh-75">
+                            <div class="col-lg-5 mb-4 mb-lg-0">
+                                <p class="experience-label text-white mb-3">Experience</p>
+                                <h1 class="experience-title text-white fw-bold mb-4">MY EXPERIENCE</h1>
+                                <p class="experience-description text-white mb-4">
+                                    Hello there! My name is Adam Elmekadem.<br>
+                                    I am a web designer & developer, and I'm very<br>
+                                    passionate and dedicated to my work.
+                                </p>
+                                <button class="btn btn-dark px-4 py-2 fw-bold">
+                                    Download my resume <i class="fas fa-external-link-alt ms-2"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="col-lg-7">
+                                <div class="experience-timeline">
+                                    <div class="experience-item mb-5">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <span class="experience-years text-white fw-bold">-2024 - Present</span>
+                                            <span class="company-name text-white">-OFPPT - CMC TAMESSNA</span>
+                                        </div>
+                                        <h3 class="job-title text-white fw-bold mb-0">DTS development digital</h3>
+                                    </div>
+                                    
+                                    <div class="experience-item mb-5">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <span class="experience-years text-white fw-bold">-2025 - 08</span>
+                                            <span class="company-name text-white">-SNRT</span>
+                                        </div>
+                                        <h3 class="job-title text-white fw-bold mb-0">Junior Devloper</h3>
+                                    </div>
+                                    
+                                    <div class="experience-item">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <span class="experience-years text-white fw-bold">-2019 - 2020</span>
+                                            <span class="company-name text-white">-Al Ayoubi</span>
+                                        </div>
+                                        <h3 class="job-title text-white fw-bold mb-0">High School Diploma</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <main id="services-content">
+                <section class="container py-5 min-vh-100" id="services">
+                    <div class="row">
+                        <div class="col-12 p-4 p-lg-5">
+                            <p class="text-uppercase text-muted fw-bold mb-1">Service</p>
+                            <h2 class="display-5 fw-bold mb-5">MY SPECIALTIES</h2>
+
+                            <div class="accordion accordion-flush" id="specialtiesAccordion">
+
+                                <div class="accordion-item border-top border-bottom">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed fw-bold fs-4 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <span class="me-3">•</span> WEB DESIGN
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#specialtiesAccordion">
+                                        <div class="accordion-body row py-4">
+                                            <div class="col-lg-8">
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-bottom">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed fw-bold fs-4 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <span class="me-3">•</span> UI/UX DESIGN
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#specialtiesAccordion">
+                                        <div class="accordion-body row py-4">
+                                            <div class="col-lg-8">
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item border-bottom">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button fw-bold fs-4 py-4 custom-gradient-text" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            <span class="me-3" style="color: #ff8c00;">•</span> MOBILE APPLICATION
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#specialtiesAccordion">
+                                        <div class="accordion-body row py-4 align-items-center">
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="../images/toa-heftiba-pcbSQTQr2-I-unsplash.jpg" class="img-fluid rounded shadow-sm" alt="Mobile Application Example">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-bottom">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed fw-bold fs-4 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <span class="me-3">•</span> USER RESEARCH
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#specialtiesAccordion">
+                                        <div class="accordion-body row py-4">
+                                            <div class="col-lg-8">
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                                <p>You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <main id="works-content">
+                <section class="container py-5 min-vh-100" id="works">
+                    <div class="row">
+                        <div class="col-12 p-4 p-lg-5">
+                            <p class="text-uppercase text-muted fw-bold mb-1">Work</p>
+                            <h2 class="display-5 fw-bold mb-5">RECENT PROJECT</h2>
+
+                            <div class="row g-5">
+
+                                <div class="col-12 col-md-6 d-flex flex-column mb-4">
+                                    <div class="d-flex gap-4 align-items-center justify-content-center">
+                                        <div class="d-flex gap-3 flex-column">
+                                            <p class="text-dark fst-italic mb-1">DDeveloppement Digital</p>
+                                            <h3 class="fs-1 fw-bold mb-3 d-flex flex-column align-items-start gap-4">
+                                                A&K STORE WEBSITE E-COMMERCE
+                                                <a href="#"><i class="fa-solid fa-arrow-right" style="color: #141313; font-size: 0.8em;"></i></a>
+                                            </h3>
+                                        </div>
+                                        <img src="../images/Img 0.png" class="img-fluid rounded shadow-sm" alt="Project 1 preview">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 d-flex flex-column mb-4">
+                                    <div class="d-flex gap-4 align-items-center justify-content-center">
+                                        <div class="d-flex gap-3 flex-column">
+                                            <p class="text-dark fst-italic mb-1">Graphic design</p>
+                                            <h3 class="fs-1 fw-bold mb-3 d-flex flex-column align-items-start gap-4">
+                                                ANND BRANDING DESIGN
+                                                <a href="#"><i class="fa-solid fa-arrow-right" style="color: #141313; font-size: 0.8em;"></i></a>
+                                            </h3>
+                                        </div>
+                                        <img src="../images/Img (1).png" class="img-fluid rounded shadow-sm" alt="Project 1 preview">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 d-flex flex-column mb-4">
+                                    <div class="d-flex gap-4 align-items-center justify-content-center">
+                                        <div class="d-flex gap-3 flex-column">
+                                            <p class="text-dark fst-italic mb-1">Developpement Digital</p>
+                                            <h3 class="fs-1 fw-bold mb-3 d-flex flex-column align-items-start gap-4">
+                                                CERTI-EASE PLATFORM
+                                                <a href="#"><i class="fa-solid fa-arrow-right" style="color: #141313; font-size: 0.8em;"></i></a>
+                                            </h3>
+                                        </div>
+                                        <img src="../images/Img (2).png" class="img-fluid rounded shadow-sm" alt="Project 1 preview">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 d-flex flex-column mb-4">
+                                    <div class="d-flex gap-4 align-items-center justify-content-center">
+                                        <div class="d-flex gap-3 flex-column">
+                                            <p class="text-dark fst-italic mb-1">Graphic Design</p>
+                                            <h3 class="fs-1 fw-bold mb-3 d-flex flex-column align-items-start gap-4">
+                                                ZOUHIR PARFUMS BRANDING 
+                                                <i class="fa-solid fa-arrow-right" style="color: #141313; font-size: 0.8em;"></i>
+                                            </h3>
+                                        </div>
+                                        <img src="../images/Img (3).png" class="img-fluid rounded shadow-sm" alt="Project 1 preview">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn btn-dark py-2 px-4 rounded-0 d-flex align-items-center mx-auto">
+                                    <a href="https://github.com/Adam-Elmekadem" target="_blank" class="text-light">See more </a>
+                                    <i class="fas fa-arrow-right-long ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="container py-5">
+                    <div class="row">
+                        <div class="col-12 p-4 p-lg-5">
+                            <div class="p-5 text-white testimonial-gradient position-relative overflow-hidden">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-lg-7 order-lg-2">
+                                        <p class="text-uppercase fw-medium mb-1">Testimonial</p>
+                                        <h2 class="display-6 fw-bold mb-4">WHAT THEY SAYS</h2>
+                                        
+                                        <blockquote class="blockquote border-start border-4 border-white ps-3 mb-4">
+                                            <p class="fs-4 fw-light">"File storage made easy – including powerful features you won't find anywhere else. Whether you're."</p>
+                                        </blockquote>
+
+                                        <div class="d-flex flex-column align-items-start gap-3">
+                                            <div>
+                                                <p class="fw-bold fs-5 mb-0">-Larry Diamond</p>
+                                                <p class="fst-italic text-light small">Chief Executive Officer, Boznik</p>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-light rounded-circle btn-sm shadow-sm" style="width: 35px; height: 35px;"><i class="fas fa-arrow-left"></i></button>
+                                                <button class="btn btn-light rounded-circle btn-sm shadow-sm" style="width: 35px; height: 35px;"><i class="fas fa-arrow-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-5 text-center order-lg-1 mt-5 mb-4 mb-lg-0">
+                                        <img src="../images/image.png" class="img-fluid testimonial-person-img" alt="Person thinking">
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-center justify-content-lg-center gap-4 mt-5 pt-3 border-top border-light border-opacity-25">
+                                    <img src="../images/Logo.png" alt="Square logo" class="client-logo" style="height: 100px;">
+                                    <img src="../images/Logo-1.png" alt="Paperz logo" class="client-logo" style="max-height: 100px;">
+                                    <img src="../images/Logo-2.png" alt="Cuebiq logo" class="client-logo" style="max-height: 100px;">
+                                    <img src="../images/Logo-3.png" alt="Martino logo" class="client-logo" style="max-height: 100px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <main>
+                <section class="container py-5" id="blogs">
+                    <div class="container py-5">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
+                                <h5 class="fst-italic">Blog</h5>
+                                <h2 class="fw-bold">READ MY BLOG</h2>
+                            </div>
+                            <div class="row gy-5">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <a href="https://medium.com/@adamelmekadem3" target="_blank" class="text-decoration-none text-dark">
+                                    <div class="d-flex flex-column gap-3">
+                                        <img src="../images/image1 (1).png" alt="" class="img-fluid">
+                                        <div>
+                                        <h4 class="fst-italic fs-6">10 July, 2002</h4>
+                                        <p class="fs-5 fw-bold">12 Unique examples of portfolio websites</p>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <a href="https://medium.com/@adamelmekadem3" class="text-decoration-none text-dark">
+                                    <div class="d-flex flex-column gap-3">
+                                        <img src="../images/image1 (2).png" alt="" class="img-fluid">
+                                        <div>
+                                        <h4 class="fst-italic">10 July, 2002</h4>
+                                        <p class="fs-5 fw-bold">12 Unique examples of portfolio websites</p>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <a href="https://medium.com/@adamelmekadem3" class="text-decoration-none text-dark">
+                                    <div class="d-flex flex-column gap-3">
+                                        <img src="../images/image1 (3).png" alt="" class="img-fluid">
+                                        <div>
+                                        <h4 class="fst-italic">10 July, 2002</h4>
+                                        <p class="fs-5 fw-bold">12 Unique examples of portfolio websites</p>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center mt-5">
+                                <button class="btn btn-dark rounded-0 px-4 py-2"><a href="https://medium.com/@adamelmekadem3" target="_blank" class="text-light">See more</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <main>
+                <section class="container py-5 d-flex justify-content-center align-items-center min-vh-100" id="contact">
+                    <div class="container py-5">
+                        <div class="row d-flex justify-content-center align-items-center">
+
+                            <div class="col-12 col-md-4 col-lg-4 d-flex flex-column gap-5">
+                                <div class="d-flex flex-column gap-3">
+                                    <h5 class="fst-italic">Contact</h5>
+                                    <h2 class="fw-bold">REACH OUT ME</h2>
+                                    <p>AV Mohammed Taib Alaoui, Rezs Zahrat Laymoun imm H, N° 6, Sidi Moussa Salé</p>
+                                </div>
+
+                                <div class="d-flex flex-column">
+                                    <p class="fs-4 fw-bold">+212 6 18 98 10 78</p>
+                                    <p class="fs-4 fw-bold">adamelmeakdem61@gmail.com</p>
+                                </div>
+
+                            <div class="d-flex flex-wrap gap-3">
+                                <p class="fs-5"><a href="#" class="ftil facebook">FACEBOOK</a></p>
+                                <p class="fs-5"><a href="#" class="ftil twitter">TWITTER</a></p>
+                                <p class="fs-5"><a href="#" class="ftil insta">INSTAGRAM</a></p>
+                                <p class="fs-5"><a href="#" class="ftil linkdin">LINKEDIN</a></p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-8 col-lg-8">
+                            <div class="p-5" style="background: linear-gradient(90deg, #b86ADF, #FF6C63, #FFB147);">
+                                <h2 class="mb-3 text-light">
+                                    ANY PROJECT?
+                                </h2>
+                                <form>
+                                    <div class="row mb-4">
+                                    <div class="col-12 col-md-6">
+                                        <label for="name" class="form-label text-light">Name</label>
+                                        <input type="text" class="form-control rounded-0 transparent-input" id="name">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="email" class="form-label text-light">Email</label>
+                                        <input type="email" class="form-control rounded-0 transparent-input" id="email">
+                                    </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="message" class="form-label text-light">Message</label>
+                                        <textarea class="form-control rounded-0 transparent-input" id="message" rows="3"></textarea>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="file" class="form-label text-light">Attach File</label>
+                                        <input type="file" class="form-control rounded-0 transparent-input" id="file">
+                                    </div>
+
+                                    <div>
+                                        <button type="submit" class="btn btn-dark rounded-0 px-4 py-2">Submit Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="../JS/mobile-menu.js"></script>
+    <script src="../js/navJS.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/slideshow-navigation.js"></script>
+</body>
+</html>
